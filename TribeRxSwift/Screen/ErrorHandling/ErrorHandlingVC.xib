@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ErrorHandlingVC" customModule="TribeRxSwift" customModuleProvider="target">
+            <connections>
+                <outlet property="request2Button" destination="XNd-zC-J4N" id="pxD-xS-Hn1"/>
+                <outlet property="request3Button" destination="iuM-kJ-5iA" id="Qob-iv-TsL"/>
+                <outlet property="request4Button" destination="C6C-Cd-r2m" id="MwW-5R-ANC"/>
+                <outlet property="requestButton" destination="5AM-kh-NAa" id="cqY-hD-yLH"/>
+                <outlet property="resultLabel" destination="Lqm-1R-YGI" id="Z8k-xc-Qbr"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5AM-kh-NAa">
+                    <rect key="frame" x="166.5" y="432.5" width="81" height="31"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Request "/>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lqm-1R-YGI">
+                    <rect key="frame" x="207" y="412.5" width="0.0" height="0.0"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XNd-zC-J4N">
+                    <rect key="frame" x="162.5" y="473.5" width="89.5" height="31"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Request 2"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iuM-kJ-5iA">
+                    <rect key="frame" x="162.5" y="514.5" width="89.5" height="31"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Request 3"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C6C-Cd-r2m">
+                    <rect key="frame" x="162" y="555.5" width="90" height="31"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Request 4"/>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="iuM-kJ-5iA" firstAttribute="top" secondItem="XNd-zC-J4N" secondAttribute="bottom" constant="10" id="9vB-Oz-XJI"/>
+                <constraint firstItem="XNd-zC-J4N" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Ibl-nc-SXe"/>
+                <constraint firstItem="C6C-Cd-r2m" firstAttribute="top" secondItem="iuM-kJ-5iA" secondAttribute="bottom" constant="10" id="Laq-bG-bbN"/>
+                <constraint firstItem="XNd-zC-J4N" firstAttribute="top" secondItem="5AM-kh-NAa" secondAttribute="bottom" constant="10" id="P3N-Rj-D7b"/>
+                <constraint firstItem="5AM-kh-NAa" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="aq5-eo-2Gj"/>
+                <constraint firstItem="iuM-kJ-5iA" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="cg3-Z9-Qu6"/>
+                <constraint firstItem="C6C-Cd-r2m" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="dux-az-HLy"/>
+                <constraint firstItem="5AM-kh-NAa" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="hOz-ap-Ied"/>
+                <constraint firstItem="Lqm-1R-YGI" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="pnN-nE-utN"/>
+                <constraint firstItem="5AM-kh-NAa" firstAttribute="top" secondItem="Lqm-1R-YGI" secondAttribute="bottom" constant="20" id="rgX-sP-bgz"/>
+            </constraints>
+            <point key="canvasLocation" x="132" y="121"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
