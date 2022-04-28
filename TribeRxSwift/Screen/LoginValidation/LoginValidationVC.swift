@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 import RxSwift
 
 class LoginValidationVC: Controller<LoginValidationVM> {
@@ -38,7 +39,39 @@ class LoginValidationVC: Controller<LoginValidationVM> {
             })
             .disposed(by: disposeBag)
         
-        Observable.combineLatest(usernameTextField.rx.text.orEmpty, passwordTextField.rx.text.orEmpty)
+        usernameTextField.rx.text.orEmpty
+            .distinctUntilChanged()
+            .bind(to: vm.inputs.rx.username)
+            .disposed(by: disposeBag)
+        
+        passwordTextField.rx.text.orEmpty
+            .distinctUntilChanged()
+            .bind(to: vm.inputs.rx.password)
+            .disposed(by: disposeBag)
+        
+        loginButton.rx.tap
+            .do(onNext: { [weak self] in
+                self?.view.endEditing(true)
+            })
+            .bind(to: vm.inputs.rx.loginButtonTapped)
+            .disposed(by: disposeBag)
+        
+        vm.outputs.rx.isLoading
+            .drive(with: self, onNext: { vc, isLoading in
+                isLoading ? SVProgressHUD.show() : SVProgressHUD.dismiss()
+            })
+            .disposed(by: disposeBag)
+        
+        vm.outputs.rx.message
+            .emit(with: self, onNext: { vc, message in
+                let alert = UIAlertController(title: "Thông báo", message: message, preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .default))
+                vc.present(alert, animated: true)
+            })
+            .disposed(by: disposeBag)
+        
+        Observable.combineLatest(usernameTextField.rx.text.orEmpty,
+                                 passwordTextField.rx.text.orEmpty)
             .map { username, password in
                 return !username.isEmpty && !password.isEmpty
             }

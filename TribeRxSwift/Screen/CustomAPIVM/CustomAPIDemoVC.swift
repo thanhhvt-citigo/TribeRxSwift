@@ -7,6 +7,7 @@
 
 import UIKit
 import SVProgressHUD
+import RxSwift
 
 class CustomAPIDemoVC: Controller<CustomAPIDemoVM> {
     @IBOutlet private var tableView: UITableView!

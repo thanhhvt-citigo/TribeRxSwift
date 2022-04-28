@@ -10,6 +10,8 @@ import UIKit
 class DemoListVC: Controller<DemoListVM> {
     @IBOutlet private var tableView: UITableView!
     
+    private var isFirstShow = true
+    
     override func setup() {
         super.setup()
         setupNavigationBar()
@@ -30,7 +32,26 @@ class DemoListVC: Controller<DemoListVM> {
         tableView.contentInsetAdjustmentBehavior = .never
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        if isFirstShow {
+            doSomethingWhenFirstLaunch()
+            isFirstShow = false
+        }
+    }
+    
+    private func doSomethingWhenFirstLaunch() {
+        // do some thing
+    }
+    
     private func setupRx() {
+        rx.viewDidAppear
+            .take(1)
+            .subscribe(onNext: { [weak self] _ in
+                self?.doSomethingWhenFirstLaunch()
+            })
+            .disposed(by: disposeBag)
+        
         rx.viewDidLayoutSubviews
             .subscribe(with: self, onNext: { vc, _ in
                 vc.tableView.contentInset.bottom = vc.view.safeAreaInsets.bottom
