@@ -14,17 +14,6 @@ class DemoListVM: ViewModel {
     
     override init() {
         super.init()
-        
-        let a = ReplaySubject<Int>.create(bufferSize: 3)
-        
-        a.onNext(1)
-        a.onNext(2)
-        a.onNext(3)
-        
-        a.subscribe(onNext: { value in
-            print("value = \(value)")
-        })
-        .disposed(by: disposeBag)
     }
 }
 
